@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.12.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'com.github.ftfetter'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+test {
+	useJUnitPlatform()
+}
+
+dependencies {
+	implementation 'com.github.ben-manes.caffeine:caffeine:2.7.0'
+	implementation 'io.projectreactor.addons:reactor-extra:3.3.2.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation 'io.projectreactor.tools:blockhound-junit-platform:1.0.2.RELEASE'
+	testImplementation "org.junit.platform:junit-platform-runner"
+	testImplementation "org.junit.jupiter:junit-jupiter-api"
+	testImplementation 'org.mockito:mockito-junit-jupiter:2.23.4'
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+}
